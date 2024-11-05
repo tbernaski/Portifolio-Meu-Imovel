@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body  style="background-color: #f9f2e9;">
+    
+    <div class="container mt-5">
+        <div class="loginForm">
+            <h1 class="text-center">
+                <a href="paginaPrincipal.html"><img src="logoPadaria.jpg" alt="" style="width: 100px; height: auto; vertical-align: middle;"></a>
+                Login
+            </h1>
+            
+            <form>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Senha</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
+                    </div>
+                </div>
+
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="entrar()">Entrar</button>
+            </div>
+            </form>
+
+    
+            <p class="text-center mt-3"> <a href="cadastro.html" id="registerLink">Esqueci minha senha</a></p>
+            
+            <p class="text-center">Ou faça login com</p>
+
+            <div class="text-center">
+                <a href="https://www.google.com/" class="btn btn-danger btn-block mb-2">
+                    <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google logo" class="mr-2"> Entrar com Google
+                </a>
+                <a href="https://www.facebook.com" class="btn btn-primary btn-block mb-2">
+                    <img src="https://img.icons8.com/ios-filled/16/ffffff/facebook.png" alt="Facebook logo" class="mr-2"> Entrar com Facebook
+                </a>
+                <a href="https://www.instagram.com" class="btn btn-info btn-block">
+                    <img src="https://img.icons8.com/ios-filled/16/ffffff/instagram-new.png" alt="Instagram logo" class="mr-2"> Entrar com Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+
+    <footer class="text-center mt-5">
+        <div class="container">
+            <a href="portifolio.html">
+                <img src="5957cb01f0894d968a9d24b21f729734.png" alt="Logo Padaria" class="logo-img" style="width: 80px; height: 80px; margin-bottom: 10px;">
+            </a>
+            <p>&copy; Todos os direitos reservados.</p>
+            <p>Endereço: Rua dos Pães, 123 - Centro, São Paulo, SP</p>
+            <p>Telefone: (11) 1234-5678 | Email: contato@.com.br</p>
+    
+            <div class="social-icons">
+                <a href="facebook.png" target="_blank">
+                    <img src="facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="Instagram_icon (1).png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+            <p>Desenvolvido por Thaís</p>
+        </div>
+    </footer>
+    
+<script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBkFckg9MT3b34cuZBhcQs6XrGxE1swb/vpK7M" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+
+    function entrar() {
+        const email = document.getElementById('inputEmail3').value;
+        const senha = document.getElementById('inputPassword').value;
+    
+        if (email === 'admin@admin.com' && senha === 'senha') {
+            alert("Login realizado com sucesso para: " + email);
+
+            window.location.href = "portifolio.html"; 
+
+        } else {
+            alert("Email ou senha incorretos. Por favor, tente novamente.");
+        }
+    }
+    
+        function recuperarSenha() {
+            const email = prompt("Por favor, insira seu email para recuperação de senha:");
+            if (email) {
+                alert("Instruções de recuperação de senha foram enviadas para: " + email);
+            }
+        }
+    
+        document.getElementById('registerLink').onclick = function(event) {
+            event.preventDefault(); 
+            recuperarSenha(); 
+        };
+    </script>
+
+</body>
+</html>

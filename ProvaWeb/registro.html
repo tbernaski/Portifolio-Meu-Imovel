@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #f9f2e9;">
+  
+
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Registre-se</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email:</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Senha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Repetir Senha:</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    <button class="btn btn-danger btn-block" type="submit">Registrar</button>
+                </form>
+
+                <a href="login.html" class="d-block text-center mt-3">Já tem uma conta? Faça login</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer class="text-center mt-5">
+        <div class="container">
+            <a href="portifolio.html">
+                <img src="5957cb01f0894d968a9d24b21f729734.png" alt="Logo Padaria" class="logo-img" style="width: 80px; height: 80px; margin-bottom: 10px;">
+            </a>
+            <p>&copy; Todos os direitos reservados.</p>
+            <p>Endereço: Rua dos Pães, 123 - Centro, São Paulo, SP</p>
+            <p>Telefone: (11) 1234-5678 | Email: contato@.com.br</p>
+    
+            <div class="social-icons">
+                <a href="facebook.png" target="_blank">
+                    <img src="facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="Instagram_icon (1).png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+    
+            <p>Desenvolvido por Thaís</p>
+        </div>
+    </footer>
+    
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (name.length <= 3) {
+                alert('O nome deve ter mais de 3 caracteres.');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem.');
+                return;
+            }
+
+            window.location.href = 'portifolio.html';
+        });
+    </script>
+</body>
+</html>

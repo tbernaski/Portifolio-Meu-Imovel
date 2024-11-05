@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="contato.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #f9f2e9;">
+    <header class="cabecalho">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="portifolio.html">
+                <img src="5957cb01f0894d968a9d24b21f729734.png" alt="Logo" class="logo-img">
+            </a>
+            <h1 class="navbar-title">Meu Imóvel</h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="portifolio.html">Portfólio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="registro.html">Registro</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Entre em Contato</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="project">Projeto a ser contratado:</label>
+                <select class="form-control" id="project" required>
+                    <option value="" disabled selected>Selecione um projeto</option>
+                    <option value="Projeto 1">Casas</option>
+                    <option value="Projeto 2">Prédios</option>
+                    <option value="Projeto 3">Sítios</option>
+                    <option value="Projeto 3">Terrenos</option>
+                    <option value="Projeto 3">Casas na Praia</option>
+                    <option value="Projeto 3">Casas no Exterior</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem:</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger btn-block">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <footer class="text-center mt-5">
+        <div class="container">
+            <a href="portifolio.html">
+                <img src="5957cb01f0894d968a9d24b21f729734.png" alt="Logo Padaria" class="logo-img" style="width: 80px; height: 80px; margin-bottom: 10px;">
+            </a>
+            <p>&copy; Todos os direitos reservados.</p>
+            <p>Endereço: Rua dos Pães, 123 - Centro, São Paulo, SP</p>
+            <p>Telefone: (11) 1234-5678 | Email: contato@.com.br</p>
+
+            <div class="social-icons">
+                <a href="facebook.png" target="_blank">
+                    <img src="facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="Instagram_icon (1).png" alt="Instagram" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="linkedin.png" alt="LinkedIn" class="social-icon">
+                </a>
+            </div>
+
+            <p>Desenvolvido por Thaís</p>
+        </div>
+    </footer>
+    
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const project = document.getElementById('project').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !project || !message) {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert('Por favor, insira um email válido.');
+                return;
+            }
+
+            alert('Mensagem enviada com sucesso!');
+            
+        });
+    </script>
+</body
